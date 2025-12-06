@@ -20,7 +20,8 @@ class Database{
 
         try {
             $this -> conn = new PDO(
-                "mysql:host=" . $this->host . ";dbname=" . $this->db_name,
+                // "mysql:host=" . $this->host . ";dbname=" . $this->db_name,
+                "mysql:host={$this->host};port=13178;dbname={$this->db_name}",
                 $this->username,
                 $this->password,
                 array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES ".$_ENV['DB_CHARSET'])
